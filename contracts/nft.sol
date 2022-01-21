@@ -15,7 +15,7 @@ interface IStakingPool {
     function stopStaking(address _staker, uint256 _tokenId) external;
 }
 
-contract Penguins is ERC721Enumerable, Ownable, Pausable {
+contract Quid is ERC721Enumerable, Ownable, Pausable {
     using SafeMath for uint256;
 
     IStakingPool private _pool;
@@ -29,9 +29,7 @@ contract Penguins is ERC721Enumerable, Ownable, Pausable {
     event CreatePenguin(uint256 indexed id);
     event PoolAddrSet(address addr);
 
-    constructor(string memory baseURI, address _poolAddr)
-        ERC721("Penguins", "PG")
-    {
+    constructor(string memory baseURI, address _poolAddr) ERC721("Quid", "QD") {
         setBaseURI(baseURI);
         // pause(true);
         _pool = IStakingPool(_poolAddr);
