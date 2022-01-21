@@ -12,7 +12,7 @@ const zeroAddress = "0x0000000000000000000000000000000000000000";
 // `describe` recieves the name of a section of your test suite, and a callback.
 // The callback must define the tests of that section. This callback can't be
 // an async function.
-describe("Penguins", function () {
+describe("TKO", function () {
   // Mocha has four functions that let you hook into the the test runner's
   // lifecyle. These are: `before`, `beforeEach`, `after`, `afterEach`.
 
@@ -26,7 +26,7 @@ describe("Penguins", function () {
   // time. It receives a callback, which can be async.
   beforeEach(async function () {
     // Get the ContractFactory and Signers here.
-    contract = await ethers.getContractFactory("Penguins");
+    contract = await ethers.getContractFactory("TKO");
     [owner, addr1, addr2, ...addrs] = await ethers.getSigners();
 
     // To deploy our contract, we just have to call Token.deploy() and await
@@ -68,7 +68,7 @@ describe("Penguins", function () {
           value: utils.parseEther("0.75"),
         })
       )
-        .to.emit(hardhatToken, "CreatePenguin")
+        .to.emit(hardhatToken, "CreateTKO")
         .withArgs(0);
     });
 
@@ -124,7 +124,7 @@ describe("Penguins", function () {
           value: utils.parseEther("0.75"),
         })
       )
-        .to.emit(hardhatToken, "CreatePenguin")
+        .to.emit(hardhatToken, "CreateTKO")
         .withArgs(0);
 
       await expect(hardhatToken.burn(0))
@@ -138,7 +138,7 @@ describe("Penguins", function () {
           value: utils.parseEther("0.75"),
         })
       )
-        .to.emit(hardhatToken, "CreatePenguin")
+        .to.emit(hardhatToken, "CreateTKO")
         .withArgs(0);
 
       await hardhatToken.approve(addr1.address, 1);
@@ -160,7 +160,7 @@ describe("Penguins", function () {
           value: utils.parseEther("0.75"),
         })
       )
-        .to.emit(hardhatToken, "CreatePenguin")
+        .to.emit(hardhatToken, "CreateTKO")
         .withArgs(0);
 
       await hardhatToken.transferFrom(owner.address, addr1.address, 1);
@@ -180,7 +180,7 @@ describe("Penguins", function () {
           value: utils.parseEther("0.75"),
         })
       )
-        .to.emit(hardhatToken, "CreatePenguin")
+        .to.emit(hardhatToken, "CreateTKO")
         .withArgs(0);
 
       await hardhatToken.transferFrom(owner.address, addr1.address, 1);
@@ -208,7 +208,7 @@ describe("Penguins", function () {
           value: utils.parseEther("0.75"),
         })
       )
-        .to.emit(hardhatToken, "CreatePenguin")
+        .to.emit(hardhatToken, "CreateTKO")
         .withArgs(0);
 
       await hardhatToken.approve(addr1.address, 1);
@@ -226,7 +226,7 @@ describe("Penguins", function () {
           value: utils.parseEther("0.75"),
         })
       )
-        .to.emit(hardhatToken, "CreatePenguin")
+        .to.emit(hardhatToken, "CreateTKO")
         .withArgs(0);
 
       await hardhatToken.approve(addr1.address, 1);
@@ -240,7 +240,7 @@ describe("Penguins", function () {
           value: utils.parseEther("0.75"),
         })
       )
-        .to.emit(hardhatToken, "CreatePenguin")
+        .to.emit(hardhatToken, "CreateTKO")
         .withArgs(0);
 
       await hardhatToken.transferFrom(owner.address, addr1.address, 1);
@@ -252,7 +252,7 @@ describe("Penguins", function () {
           value: utils.parseEther("0.75"),
         })
       )
-        .to.emit(hardhatToken, "CreatePenguin")
+        .to.emit(hardhatToken, "CreateTKO")
         .withArgs(0);
 
       await hardhatToken.approve(addr1.address, 1);
