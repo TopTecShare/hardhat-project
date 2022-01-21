@@ -15,7 +15,7 @@ interface IStakingPool {
     function stopStaking(address _staker, uint256 _tokenId) external;
 }
 
-contract Quid is ERC721Enumerable, Ownable, Pausable {
+contract TKO is ERC721Enumerable, Ownable, Pausable {
     using SafeMath for uint256;
 
     IStakingPool private _pool;
@@ -26,10 +26,12 @@ contract Quid is ERC721Enumerable, Ownable, Pausable {
 
     string public baseTokenURI;
 
-    event CreatePenguin(uint256 indexed id);
+    event CreateTKO(uint256 indexed id);
     event PoolAddrSet(address addr);
 
-    constructor(string memory baseURI, address _poolAddr) ERC721("Quid", "QD") {
+    constructor(string memory baseURI, address _poolAddr)
+        ERC721("Tentacle Knockout v1", "TKO")
+    {
         setBaseURI(baseURI);
         // pause(true);
         _pool = IStakingPool(_poolAddr);
@@ -60,7 +62,7 @@ contract Quid is ERC721Enumerable, Ownable, Pausable {
         for (uint256 i = 0; i < _amount; i++) {
             uint256 id = totalSupply();
             _safeMint(msg.sender, id);
-            emit CreatePenguin(id);
+            emit CreateTKO(id);
         }
     }
 
