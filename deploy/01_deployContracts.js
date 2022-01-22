@@ -3,7 +3,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   const { deploy } = deployments;
   const { deployer } = await getNamedAccounts();
 
-  await deploy("TKO", {
+  await deploy("TentacleKnockout", {
     from: deployer,
     log: true,
     args: [
@@ -12,4 +12,4 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     ],
   });
 };
-module.exports.tags = ["all", "TKO"];
+module.exports.tags = ["all", "TentacleKnockout"];

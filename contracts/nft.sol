@@ -15,7 +15,7 @@ interface IStakingPool {
     function stopStaking(address _staker, uint256 _tokenId) external;
 }
 
-contract TKO is ERC721Enumerable, Ownable, Pausable {
+contract TentacleKnockout is ERC721Enumerable, Ownable, Pausable {
     using SafeMath for uint256;
 
     IStakingPool private _pool;
@@ -26,11 +26,11 @@ contract TKO is ERC721Enumerable, Ownable, Pausable {
 
     string public baseTokenURI;
 
-    event CreateTKO(uint256 indexed id);
+    event CreateTentacleKnockout(uint256 indexed id);
     event PoolAddrSet(address addr);
 
     constructor(string memory baseURI, address _poolAddr)
-        ERC721("Tentacle Knockout v1", "TKO")
+        ERC721("TentacleKnockout", "TKO")
     {
         setBaseURI(baseURI);
         // pause(true);
@@ -62,7 +62,7 @@ contract TKO is ERC721Enumerable, Ownable, Pausable {
         for (uint256 i = 0; i < _amount; i++) {
             uint256 id = totalSupply();
             _safeMint(msg.sender, id);
-            emit CreateTKO(id);
+            emit CreateTentacleKnockout(id);
         }
     }
 
