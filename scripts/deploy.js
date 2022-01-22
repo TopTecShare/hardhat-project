@@ -7,7 +7,7 @@ async function main() {
 
   const TKO = await ethers.getContractFactory("TKO");
   await TKO.deploy(
-    "https://ipfs.io/ipfs/QmQtN81i9eNrD3wxcr67scDpLvZDDXxbmAvNXMaZh3D6tB/",
+    "https://ipfs.io/ipfs/QmW9snoUv7m2MkRJirgVyCQJuhsW1uJTrG7TAEhUz3swfg/",
     "0x6F84Fa72Ca4554E0eEFcB9032e5A4F1FB41b726C"
   );
 }
